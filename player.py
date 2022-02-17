@@ -1,6 +1,7 @@
 class Player:
     pv = 10
     is_in = object
+    inventory = []
     
     def __init__(self, nome):
         self.nome = nome
@@ -33,3 +34,4 @@ class Player:
     
     def quit(self):
         pass
+

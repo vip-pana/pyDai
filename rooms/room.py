@@ -1,10 +1,12 @@
 class Room:
     __manual = False
     __links = {}
+    __message = ""
     
-    def __init__(self, room_name, nord = None, sud=None, est=None, ovest=None):
+    def __init__(self, room_name, nord = None, sud=None, est=None, ovest=None, message=""):
         self.__room_name = room_name
         self.__links = {"nord": nord, "sud": sud, "est": est, "ovest": ovest}
+        self.__message = message
 
     def get_links(self):
         return self.__links
@@ -31,7 +33,11 @@ class Room:
             "ovest":ovest
         }
 
+    def set_message(self, message):
+        self.__message = message
+
     def show(self):
+        print("\n" + self.__message + "\n")
         if self.__manual is False:
             print(f"Sono in {self.__room_name} e il manuale qui non c'e'!\nda qui posso andare in zona:")
             self.get_key_name()
